@@ -5,6 +5,15 @@ from itertools import product, chain
 import random
 from PIL import Image
 
+
+### FOR TESTING STIMULI GENERATED IN STIM DICT:
+### make a dict for the specific individual stimuli you want
+### set test_stim_dict_path to text file
+### run this script 
+### it generates all variations of the parameters you set, selecting random ones to generate
+
+test_stim_dict_path = '/home/nfitzmaurice/stim_gen/demos/big_diff.txt'
+
 class UIStimuliGenerator:
     def __init__(self, test_mode=False):
         self.test_mode = test_mode
@@ -463,7 +472,7 @@ if __name__ == "__main__":
     
     namespace = {}
     # path to dict stimuli params txt file 
-    file_path = '/home/nfitzmaurice/stim_gen/demos/big_diff.txt'
+    file_path = test_stim_dict_path
     with open(file_path, 'r') as file:
         exec(file.read(), {}, namespace)
     # extract dicts for shared and feature specific params
