@@ -1,0 +1,78 @@
+
+## sorryyyyy this is terrible the whole stimuli generating pipeline is terrible
+## you can just use this dict which I used for the training and test data 
+## or make fewer examples
+## id suggest using the same train and test dats for the experiment with cycles
+
+## also the data isnt always balanced when generated. Random examples can be thrown out of the train datasets
+## that are too big because its important the class sizes are equal
+## or update stimuli generator to make seperate classes for example 
+## cross orientation and cross stroke thickness but I didnt have time for this
+
+## to use the unblanced data change the dict name from features_dict_unbalanced to features_dict
+## and rename the current features_dict so it isnt read by the generator 
+
+shared_params_dict = {
+        'bg_shade': [0,20], 
+        'image_height': 1250, 
+        'image_width': 1250, 
+        'shift': [False],
+        'cent_type': ['rect'],
+        'feature_shade': [150, 255],
+        'x_points': [6,7,8], 
+        'y_points': [0], 
+        'cent_size': [40,50,60],
+    }
+
+features_dict = {
+            'circle': {
+                'param1': [5,10,12,26,34,42],
+            },
+
+            'cross': {
+                'param1': [12,15],
+                'orientation': [0,30,45],
+            },
+
+            'curve': {
+                'param1': [20,30],
+                'orientation': [5,75,95],
+            },
+
+            'line': {
+                'param1': [12,16],
+                'orientation': [5,30,55],
+            },
+
+            'square': {
+                'param1': [55,75],
+                'orientation': [30,55,75],
+            }
+        }
+
+features_dict_unbalanced = {
+            'circle': {
+                'param1': [12,26,34,42],
+            },
+
+            'cross': {
+                'param1': [12,15,20],
+                'orientation': [0,30,45,55],
+            },
+
+            'curve': {
+                'param1': [12,20,30],
+                'orientation': [5,30,75,95],
+            },
+
+            'line': {
+                'param1': [12,16,22],
+                'orientation': [5,30,55,75,95],
+            },
+
+            'square': {
+                'param1': [55,75],
+                'orientation': [10,30,55,75],
+            }
+        }
+
