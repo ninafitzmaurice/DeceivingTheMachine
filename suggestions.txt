@@ -6,3 +6,5 @@ Custom ReLU class vs Residual ReLU class:
 in the backwards pass:
 ResReLU updares the latent variables, ReLU just stores which features were activated and doesnt update latents. 
 You can set some layers to ResReLU and others to just ReLU to control how feedback propagates back through the network. 
+
+check out DGM MNIST MODEL HERE: https://github.com/minhtannguyen/DGM/blob/master/mnist/lenet_ld_opt.py
